@@ -11,7 +11,7 @@
     ,nm=#{nm}
     ,main_pic=#{mainPic}
     ,brand=#{brand}
-    ,created_at=#{createdAt}
+    ,created_at=now()
 </insert>
 
 
