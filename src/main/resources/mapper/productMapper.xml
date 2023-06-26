@@ -27,5 +27,18 @@
         FROM t_product
     </select>
 
+  <select id="selProductDetal">
+      select iproduct,price,nm,ctnt,brand,main_pic mainPic
+      from t_product
+      where iproduct=#{iproduct}
+  </select>
+    <select id="selDetProduct">
+        select pic
+        from t_product_pic
+        where iproduct=#{iproduct}
+    </select>
+
+
+
 
 </mapper>

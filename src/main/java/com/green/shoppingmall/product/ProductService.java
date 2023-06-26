@@ -1,9 +1,6 @@
 package com.green.shoppingmall.product;
 
-import com.green.shoppingmall.product.model.ProductEntity;
-import com.green.shoppingmall.product.model.ProductInsDto;
-import com.green.shoppingmall.product.model.ProductPicEntity;
-import com.green.shoppingmall.product.model.ProductVo;
+import com.green.shoppingmall.product.model.*;
 import com.green.shoppingmall.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -93,5 +90,12 @@ public class ProductService {
     }
     List<ProductVo> selProduct() {
         return mapper.selProduct();
+    }
+
+    public ProductRes selDetProductPic(Long iproduct){
+        ProductDetVo productDetVo = mapper.selProductDetal(iproduct);
+        List<String > productPicVos = mapper.selDetProduct(iproduct);
+        ProductRes build = ProductRes.builder().data(productDetVo).pics(productPicVos).build();
+        return build;
     }
 }

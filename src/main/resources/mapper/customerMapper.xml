@@ -12,4 +12,8 @@
         ,addr=#{addr}
         ,ph=#{ph}
     </insert>
+    <select id="selCustomer">
+        select icustomer,nm,ph
+        from t_customer
+    </select>
 </mapper>

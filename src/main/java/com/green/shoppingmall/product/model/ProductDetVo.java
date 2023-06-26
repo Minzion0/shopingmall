@@ -1,18 +1,15 @@
 package com.green.shoppingmall.product.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
-@Builder
-public class ProductEntity {
+@Getter
+@AllArgsConstructor
+public class ProductDetVo {
     private Long iproduct;
-    private Integer price;
-    private String ctnt;
-    private String createdAt;
+    private int price;
     private String nm;
+    private String ctnt;
     private String mainPic;
     private String brand;
-
 }

@@ -1,7 +1,6 @@
 package com.green.shoppingmall.product;
 
-import com.green.shoppingmall.product.model.ProductInsDto;
-import com.green.shoppingmall.product.model.ProductVo;
+import com.green.shoppingmall.product.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +35,13 @@ public class ProductController {
     public List<ProductVo> getProduct() {
         return service.selProduct();
     }
+
+    @GetMapping("/{iproduct}")
+    public ProductRes getDetProduct(@PathVariable Long iproduct){
+
+        return service.selDetProductPic(iproduct);
+    }
+
 
 
 
