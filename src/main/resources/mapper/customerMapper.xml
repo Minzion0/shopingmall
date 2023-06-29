@@ -16,4 +16,6 @@
         select icustomer,nm,ph
         from t_customer
     </select>
+
+
 </mapper>

@@ -11,6 +11,18 @@
         ,quantity=#{quantity}
     </insert>
 
+    <select id="findBuylist">
+        SELECT A.ibuy,A.iproduct,C.nm ,C.price
+        ,C.main_pic,B.icuetomer,B.nm cnm,A.quantity,A.buy_at
+        FROM t_buy A
+        INNER JOIN t_customer B
+        ON A.icustomer=B.icuetomer
+        INNER JOIN t_product C
+        ON A.iproduct=C.iproduct
+        WHERE B.icuetomer =#{icuestomer}
+        order by A.buy_at desc
+    </select>
+
 
 
 </mapper>
